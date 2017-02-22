@@ -12,7 +12,7 @@ def getRealValue(initial):
 # Removes quotes from beginning and end of string
 def stripQuotes(string):
     if string.startswith('"') and string.endswith('"'):
-        string = string[1:-1]
+        string = string[1:-1] # Remove first and last chars
     return string
 
 def csvToJson(filename):
@@ -23,14 +23,12 @@ def csvToJson(filename):
     headers = headers.rstrip()
     headers = headers.split(",")
 
-    # populate list with all non-header lines
-    lines = f.readlines()
+    lines = f.readlines() # Populate list with all non-header lines
     lastLine = len(lines) - 1
     print("[") 
     for i, line in enumerate(lines):
         line = line.rstrip()
-        # List of all fields, split by comma
-        fields = line.split(",")
+        fields = line.split(",") # List of all fields, split by comma
         print("{")
         
         lastField = len(fields) - 1
@@ -88,7 +86,6 @@ def csvToXml(filename):
 def main():
     # If converting to JSON
     if len(sys.argv) == 2:
-        # Passing filename to csvToJson
         csvToJson(sys.argv[1])
     # If converting to XML
     elif len(sys.argv) == 3 and sys.argv[2] == "xml":
