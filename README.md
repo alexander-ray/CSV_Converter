@@ -12,4 +12,4 @@ Converts `kerbals.csv` file to JSON or XML using python. No libraries are used o
 ### Transformation
 My solution implemented the "Apply a transform to the 'Courage' and 'Stupidity' columns after they've been read, and before they've been displayed" part of the given problem.
 
-I read the transformation as saying the csv file given contains the "transformed" values for "Courage" and "Stupidity". To transform these values back to the true values I used the equation `true_val = (((arctan(given_val) + (PI/2)) * 100.0) / PI`. 
+I read the transformation as saying the csv file given contains the "transformed" values for "Courage" and "Stupidity". To transform these values back to the true values (percentage between 0 and 100) I used the equation `true_val = (((arctan(given_val) + (PI/2)) * 100.0) / PI`. 
